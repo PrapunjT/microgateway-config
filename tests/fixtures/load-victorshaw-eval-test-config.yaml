@@ -22,6 +22,7 @@ edgemicro:
   plugins:
     sequence:
       - oauth
+      - extauth
 headers:
   x-forwarded-for: true
   x-forwarded-host: true
@@ -42,3 +43,7 @@ quotas:
   bufferSize:
     minute: 10
     default: 10000
+extauth:
+  publickey_url: "http://localhost:8080/publicKey"
+  client_id: "sub"
+  iss: "https://localhost:8080/oauth2/default"

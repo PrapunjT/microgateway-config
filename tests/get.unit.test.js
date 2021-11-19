@@ -61,4 +61,11 @@ describe('config - get ', () => {
             done();
         });
     });
+
+    it('gets extauth public key updates from server', done => {
+        configlibmockValid.get({ source: './tests/fixtures/load-victorshaw-eval-test-config.yaml', keys: keys }, (err, config) => {
+            assert(config.extauth.public_keys);
+            done();
+        });
+    });
 });
